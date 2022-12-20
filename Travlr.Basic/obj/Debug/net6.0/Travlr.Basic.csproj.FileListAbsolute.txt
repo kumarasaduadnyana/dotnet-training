@@ -1,0 +1,12 @@
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\bin\Debug\net6.0\Travlr.Basic.deps.json
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\bin\Debug\net6.0\Travlr.Basic.dll
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\bin\Debug\net6.0\Travlr.Basic.pdb
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\Travlr.Basic.csproj.AssemblyReference.cache
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\Travlr.Basic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\Travlr.Basic.AssemblyInfoInputs.cache
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\Travlr.Basic.AssemblyInfo.cs
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\Travlr.Basic.csproj.CoreCompileInputs.cache
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\Travlr.Basic.dll
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\refint\Travlr.Basic.dll
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\Travlr.Basic.pdb
+C:\Users\sadua\source\repos\dotnet-training\Travlr.Basic\obj\Debug\net6.0\ref\Travlr.Basic.dll

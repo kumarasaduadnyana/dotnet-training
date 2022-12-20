@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "dotnet-training/1.0.0": {
+        "dependencies": {
+          "Travlr.Basic": "1.0.0"
+        },
+        "runtime": {
+          "dotnet-training.dll": {}
+        }
+      },
+      "Travlr.Basic/1.0.0": {
+        "runtime": {
+          "Travlr.Basic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "dotnet-training/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Travlr.Basic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
