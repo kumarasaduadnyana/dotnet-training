@@ -1,23 +1,27 @@
 ﻿using dotnet_training.Models;
 using System.Data;
 using System.Runtime.CompilerServices;
-using Travlr.Basic;
 namespace dotnet_training
 {
     public class Program
     {
+        /* List Of deals, define Deals product  */
+
         public static List<Deal> DealList = new List<Deal>
         { 
             new Deal { Id = 1, Name = "Voucher A" },
             new Deal { Id = 2, Name = "Voucher B"}
         };
 
+        
+        /* List of Accommodation, define Deals  */
         public static List<Accommodation> AccomList = new List<Accommodation>
         {
             new Accommodation { Id = 1, Name = "Hotels A" },
             new Accommodation { Id = 2, Name = "Hotels B"}
         };
 
+        /* Add item to cart */
         public static Cart Cart = new Cart();
 
         public static void Main(string[] args)
@@ -70,7 +74,7 @@ namespace dotnet_training
                     ShowDealProducts();
                     break;
                 case "2":
-                    new NotImplementedException();
+                    ShowAccommProduct();
                     break;
                 case "3":
                     ShowMainMenu();
@@ -90,6 +94,27 @@ namespace dotnet_training
             var input = Console.ReadLine();
 
             if (input == "99")
+            {
+                ShowProductList();
+                return;
+            }
+
+            AddDealToCart(productId: input);
+            ShowMainMenu();
+        }
+
+        public static void ShowAccommProduct()
+        {
+            foreach (var item in AccomList)
+            {
+                Console.WriteLine(item.Id + ". " + item.Name);
+            }
+
+            var input = Console.ReadLine();
+
+            Console.WriteLine("99. Back");
+
+            if (input == "99") 
             {
                 ShowProductList();
                 return;
