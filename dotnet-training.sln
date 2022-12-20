@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-training", "dotnet-training\dotnet-training.csproj", "{D4224B29-C9CE-49B5-AD26-08BB4480B2E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travlr.Basic", "Travlr.Basic\Travlr.Basic.csproj", "{2B6D16F2-25E9-4464-AB03-C41BFCD05829}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travlr.Basic", "Travlr.Basic\Travlr.Basic.csproj", "{2B6D16F2-25E9-4464-AB03-C41BFCD05829}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

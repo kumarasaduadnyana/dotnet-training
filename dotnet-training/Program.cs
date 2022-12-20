@@ -1,45 +1,110 @@
-﻿using System.Runtime.CompilerServices;
+﻿using dotnet_training.Models;
+using System.Data;
+using System.Runtime.CompilerServices;
 using Travlr.Basic;
 namespace dotnet_training
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static List<Deal> DealList = new List<Deal>
+        { 
+            new Deal { Id = 1, Name = "Voucher A" },
+            new Deal { Id = 2, Name = "Voucher B"}
+        };
+
+        public static List<Accommodation> AccomList = new List<Accommodation>
         {
-            MainMenu();
+            new Accommodation { Id = 1, Name = "Hotels A" },
+            new Accommodation { Id = 2, Name = "Hotels B"}
+        };
+
+        public static Cart Cart = new Cart();
+
+        public static void Main(string[] args)
+        {
+            ShowMainMenu();
         }
 
-        public static void MainMenu()
+        public static void ShowMainMenu()
         {
-            List<string> ListMenu = new List<string>();
-            ListMenu.Add("1. List Product");
-            ListMenu.Add("2. List Cart");
+            Console.WriteLine("1. List Products");
+            Console.WriteLine("2. List Cart");
 
-            foreach (var item in ListMenu)
-            {
-                Console.WriteLine(item);
+            switch (Console.ReadLine())
+            { 
+                case "1":
+                    ShowProductList();
+                    break; 
+                case "2":
+                    ShowCartItemList();
+                    break;
             }
-            Console.WriteLine("Choose the number: ");
+        }
+
+        private static void ShowCartItemList()
+        {
+            if (Cart.Items.Any())
+            {
+                foreach (var item in Cart.Items)
+                {
+                    Console.WriteLine(item.Name);
+                }
+            }
+            else
+            {
+                Console.WriteLine("The cart is empty!");
+            }
+
+            ShowMainMenu();
+        }
+
+        public static void ShowProductList()
+        {
+            Console.WriteLine("1. Deals");
+            Console.WriteLine("2. Accoms");
+            Console.WriteLine("3. Back");
 
             switch (Console.ReadLine())
             {
                 case "1":
-                    Product.ListOfProduct();
+                    ShowDealProducts();
                     break;
-
                 case "2":
-                    ListCart.Cart();
+                    new NotImplementedException();
                     break;
-
                 case "3":
-                    Console.WriteLine("Exit");
-                    Console.Clear();
-                    break;
-
-                default:
-                    Console.WriteLine("Showing List Success");
+                    ShowMainMenu();
                     break;
             }
+        }
+
+        public static void ShowDealProducts()
+        {
+            foreach (var item in DealList)
+            {
+                Console.WriteLine(item.Id + ". " + item.Name);
+            }
+
+            Console.WriteLine("99. Back");
+
+            var input = Console.ReadLine();
+
+            if (input == "99")
+            {
+                ShowProductList();
+                return;
+            }
+
+            AddDealToCart(input);
+            ShowMainMenu();
+        }
+
+        public static void AddDealToCart(string productId)
+        {
+            var productIdInt = int.Parse(productId);
+
+            var deal = DealList.First(x => x.Id == productIdInt);
+            Cart.Items.Add(deal);
         }
     }
 }

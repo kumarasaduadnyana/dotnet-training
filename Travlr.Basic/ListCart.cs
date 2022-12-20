@@ -12,6 +12,7 @@ namespace Travlr.Basic
         {
 
             int[] array = { };
+            
             Console.WriteLine(array.Length);
         }
     }
