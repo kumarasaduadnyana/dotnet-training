@@ -9,8 +9,8 @@ namespace dotnet_training
 
         public static List<Deal> DealList = new List<Deal>
         { 
-            new Deal { Id = 1, Name = "Voucher A" },
-            new Deal { Id = 2, Name = "Voucher B"}
+            new Deal { Id = 1, Name = "Treat Yourself to the Ultimate Lombok Escape" },
+            new Deal { Id = 2, Name = "Epic NYE Celebration ft. Clean Bandit, Timmy Trumpet and KSHMR"}
         };
 
         
@@ -31,15 +31,19 @@ namespace dotnet_training
 
         public static void ShowMainMenu()
         {
-            Console.WriteLine("1. List Products");
-            Console.WriteLine("2. List Cart");
-
+            Console.WriteLine("====== Welcome to our services. Please Choose the product you want to buy =====");
+            Console.WriteLine("\n");
+            Console.WriteLine("1. List of Products");
+            Console.WriteLine("2. List of Cart \n");
+            Console.WriteLine("Choose the menu:");
             switch (Console.ReadLine())
             { 
                 case "1":
+                    Console.Clear();
                     ShowProductList();
                     break; 
                 case "2":
+                    Console.Clear();
                     ShowCartItemList();
                     break;
             }
@@ -56,9 +60,12 @@ namespace dotnet_training
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("The cart is empty!");
+                Console.WriteLine("You will redirect to the main menu");
             }
-
+            Thread.Sleep(1000);
+            Console.Clear();
             ShowMainMenu();
         }
 
@@ -71,12 +78,15 @@ namespace dotnet_training
             switch (Console.ReadLine())
             {
                 case "1":
+                    Console.Clear();
                     ShowDealProducts();
                     break;
                 case "2":
+                    Console.Clear();
                     ShowAccommProduct();
                     break;
                 case "3":
+                    Console.Clear();
                     ShowMainMenu();
                     break;
             }
@@ -116,20 +126,28 @@ namespace dotnet_training
 
             if (input == "99") 
             {
+                Console.Clear();
                 ShowProductList();
                 return;
             }
 
-            AddDealToCart(input);
+            AddDealToCart(productId: input);
+            /*Console.Clear();
+            Console.WriteLine("");
+            Console.Clear();*/
             ShowMainMenu();
         }
 
-        public static void AddDealToCart(string productId)
+        public static void AddDealToCart(string? productId)
         {
-            var productIdInt = int.Parse(productId);
+            int productIdInt = int.Parse(s: productId);
 
             var deal = DealList.First(x => x.Id == productIdInt);
             Cart.Items.Add(deal);
+
+            var accom = AccomList.First(x => x.Id == productIdInt);
+            Cart.Items.Add(accom);
+
         }
     }
 }
